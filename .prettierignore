@@ -1,0 +1,8 @@
+dist
+.jest
+src/ui/assets/*
+package.json
+.gitignore
+.gitattributes
+.eslintignore
+coverage

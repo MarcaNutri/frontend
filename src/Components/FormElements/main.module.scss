@@ -1,0 +1,71 @@
+@import '../../styles/variables.module.scss';
+
+.input_label {
+  color: $label-text-color;
+  font-size: $label-text-size;
+  font-weight: $label-text-weight;
+  line-height: $label-text-line-height;
+  letter-spacing: $label-text-letter-spacing;
+  margin-bottom: 7.6px;
+}
+
+.input_label_info {
+  font-size: calc($label-text-size - 2px);
+  color: $success;
+  margin-bottom: 0px;
+  font-weight: inherit;
+}
+
+.input_label_info_error {
+  font-size: calc($label-text-size - 2px);
+  color: $error;
+  margin-bottom: 0px;
+  font-weight: inherit;
+}
+
+.input_element {
+  width: 100%;
+  min-width:  200px;
+  max-width:  420px;
+  border-radius: 2.184px;
+  border: 0.364px solid #C7C9D9;
+  background: white;
+  color: $text-input-color;
+  font-size: $text-input-size;
+  font-weight: $text-input-weight;
+  line-height: $text-input-line-height;
+  letter-spacing: $text-input-letter-spacing;
+  padding: 7.28px 11.7px;
+
+  &::placeholder {
+    color: $placeholder-text-color;
+    font-size: $placeholder-text-size;
+    font-weight: $placeholder-text-weight;
+    line-height: $text-input-line-height;
+    letter-spacing: $text-input-letter-spacing;
+  }
+
+  &:focus {
+    border: 0.546px solid $success;
+    outline: none;
+    box-shadow: 0px 0px 1.45629px 0px #9BF;
+  }
+
+  &:disabled {
+    color: $text-input-color;
+    border-radius: 2.184px;
+    opacity: 0.4;
+    background: $disabled;
+  }
+}
+
+.input_element_error {
+  border: 0.546px solid $error;
+  outline: none;
+
+  &:focus {
+    border: 0.546px solid $error;
+    outline: none;
+  }
+}
+

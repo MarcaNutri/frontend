@@ -1,0 +1,5 @@
+@import '../../../styles/variables.module.scss';
+.info_success {
+  fill: $success !important;
+  stroke: $success;
+}
