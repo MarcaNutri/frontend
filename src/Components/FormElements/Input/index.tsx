@@ -14,7 +14,8 @@ interface InputElementProps {
   placeholder?: string;
   error?: string;
   disabled?: boolean;
-  infoText?: string
+  infoText?: string;
+  classProp?: string;
 }
 
 const InputElement: React.FC<InputElementProps> = ({
@@ -26,7 +27,8 @@ const InputElement: React.FC<InputElementProps> = ({
   placeholder = "teste",
   error = "",
   disabled = false,
-  infoText = ""
+  infoText = "",
+  classProp=""
 }) => {
 
   return(
@@ -37,7 +39,7 @@ const InputElement: React.FC<InputElementProps> = ({
         type={type}
         value={value}
         onChange={(e: ChangeEvent<HTMLInputElement>) => { updateValue(e.target.value) }}
-        className={error ? `${main.input_element} ${main.input_element_error}` : `${main.input_element}`}
+        className={error ? `${main.input_element} ${main.input_element_error} ${classProp}` : `${main.input_element} ${classProp}`}
         placeholder={placeholder}
         disabled={disabled}
       />

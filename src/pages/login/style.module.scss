@@ -1,0 +1,45 @@
+@import '../../styles/variables.module.scss';
+
+.title {
+  color: #525252;
+  font-family: $title-text-color;
+  font-size: $title-text-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.container_aba {
+  width: 100%;
+  max-width: 500px;
+}
+
+.tab_active {
+  cursor: pointer;
+  color: #289257;
+  font-family: $text-colored-title-font-family, sans-serif;
+  font-size: $medin-text-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.tab_disabled {
+  cursor: pointer;
+  color: #A1A1A1;
+  font-family: $text-title-font-family;
+  font-size: $medin-text-size;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.tab_active {
+  fill: #289257 !important;
+  stroke: #289257 !important;
+}
+
+.tab_disabled {
+  fill: #9C9C9C !important;
+  stroke: #9C9C9C !important;
+}
