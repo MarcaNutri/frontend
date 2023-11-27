@@ -43,3 +43,26 @@
   fill: #9C9C9C !important;
   stroke: #9C9C9C !important;
 }
+
+.forgot_password {
+  color: #289257;
+  font-family: $text-title-font-family;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.not_partiner {
+  font-family: Nunito Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color:#828282;
+  cursor: pointer;
+}
+
+.color_green {
+  color: #289257;
+}

@@ -4,6 +4,7 @@ import NutriImg from "../../../public/assets/Login/login-nutri.png"
 import ClientImg from "../../../public/assets/Login/login-client.png"
 import NutriImgTab from "../../../public/assets/Login/nutri-icon.svg"
 import ClientImgTab from "../../../public/assets/Login/client-icon.svg"
+import Logo from "../../../public/assets/Login/MarcaNutri-logo.png"
 import InputElement from 'Components/FormElements/Input'
 import PasswordInput from '../../Components/FormElements/InputPassword/index'
 import Styles from './style.module.scss'
@@ -19,8 +20,9 @@ const Login = () => {
     <div className="h-screen md:flex lg:flex w-full p-2">
       <Image src={ isNutri ? NutriImg : ClientImg} width={"1110"} className="rounded-bl-lg rounded-tl-lg" height={1080} alt="nutricionista"/>
 
-      <div className={`flex items-center justify-center m-auto ${Styles.container_aba} p-8`}>
+      <div className={`flex items-center flex-col justify-between m-auto ${Styles.container_aba} p-8 h-full`}>
         <div className="flex flex-col w-full">
+          <Image src={Logo} width={232} alt="logo" className={`${Styles.logo}`}/>
           <h1 className={`${Styles.title} mb-10`}>Faça Login na sua conta</h1>
 
           <div className="flex justify-center mb-14">
@@ -80,7 +82,17 @@ const Login = () => {
             error=""
           />
 
+
+          <p className={`${Styles.forgot_password} text-end mt-10`}>Esqueceu sua senha?</p>
+
+
+
+
+
         </div>
+        <p className={`${Styles.not_partiner} text-end mt-10`}>
+          Não é um parceiro MarcaNutri? <span className={`${Styles.color_green}`}>Seja um parceiro.</span>
+        </p>
       </div>
 
     </div>
