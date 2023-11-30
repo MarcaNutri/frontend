@@ -7,6 +7,8 @@ interface ButtonElementProps {
   text:string;
   disabled?:boolean
   styleButton?:string
+  classProp?:string
+  type?:string
 }
 
 
@@ -15,7 +17,8 @@ const ButtonElement : React.FC<ButtonElementProps> = ({
   size,
   text,
   disabled,
-  styleButton = "primary"
+  styleButton = "primary",
+  classProp = ""
 }) => {
 
   const handleSizeButton = () => {
@@ -32,6 +35,8 @@ const ButtonElement : React.FC<ButtonElementProps> = ({
 
     if(styleButton == "primary") {
       classButton = classButton + ` ${style.button_primary}`
+    } else if("round") {
+      classButton = classButton + ` ${style.button_round}`
     } else {
       classButton = classButton + ` ${style.button_secundary}`
     }
@@ -42,7 +47,7 @@ const ButtonElement : React.FC<ButtonElementProps> = ({
   return(
     <button
       id={id}
-      className={handleSizeButton()}
+      className={`${handleSizeButton()} ${classProp}`}
       disabled={disabled}
     >
       {text}
