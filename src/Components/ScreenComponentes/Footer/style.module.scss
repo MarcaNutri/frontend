@@ -1,0 +1,39 @@
+@import '../../../styles/variables.module.scss';
+
+.footer_background {
+  background: linear-gradient(180deg, #289257 0%, #63AD61 100%);
+}
+
+.footer_content {
+  color: white;
+  max-width: 1100px;
+}
+
+.footer_border {
+  height: 47px;
+  background-color: #96C94F;
+}
+
+.footer_line {
+  width: 87.023px;
+  height: 2px;
+  background: #FFF;
+  margin: 5px 0px 5px 0px;
+}
+
+.whats_button {
+  width: 287px;
+  height: 59px;
+  flex-shrink: 0;
+  padding: 0px 46px 0px 46px;
+  border-radius: 20px;
+  background: #96C94F;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

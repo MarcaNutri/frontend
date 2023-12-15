@@ -12,7 +12,7 @@ import Logo from "../../../public/assets/Login/MarcaNutri-logo.png"
 
 //Components
 import InputElement from 'Components/FormElements/Input'
-import PasswordInput from '../../Components/FormElements/InputPassword/index'
+import PasswordInput from 'Components/FormElements/InputPassword/index'
 import ButtonElement from 'Components/FormElements/Button'
 
 //Styles

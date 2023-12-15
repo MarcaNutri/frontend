@@ -1,0 +1,21 @@
+@import '../../../styles/variables.module.scss';
+.info_success {
+  fill: $success !important;
+  stroke: $success;
+}
+
+.input_inner {
+  padding: 24px 11.7px 7.28px 11.7px;
+  font-size: $text-input-size-big;
+
+  &::placeholder {
+    font-size: $text-input-size-big;
+  }
+}
+
+.label_inner {
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  color: $success !important;
+}
