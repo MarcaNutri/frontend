@@ -26,11 +26,11 @@ const Login = () => {
   const [password, setPassword] = useState<string>("")
 
   return (
-    <div className="h-screen md:flex lg:flex w-full p-2">
+    <div className="h-screen md:flex lg:flex w-full p-2 bg-white">
       <Image
         src={ isNutri ? NutriImg : ClientImg}
         //width={"1110"}
-        className="rounded-bl-lg rounded-tl-lg"
+        className="rounded-bl-lg rounded-tl-lg hidden lg:flex"
         //height={1080}
         alt="nutricionista"
       />
@@ -109,11 +109,21 @@ const Login = () => {
         {
           isNutri ?
           <p className={`${Styles.not_partiner} text-end mt-10`}>
-            Não é um parceiro MarcaNutri? <span className={`${Styles.color_green} font-bold`}>Seja um parceiro.</span>
+            Não é um parceiro MarcaNutri?
+            <span
+              className={`${Styles.color_green} py-2 font-bold`}
+            >
+              Seja um parceiro.
+            </span>
           </p>
           :
           <p className={`${Styles.not_partiner} text-end mt-10`}>
-            Não está cadastrado no MarcaNutri? <span className={`${Styles.color_green} font-bold`}>Crie sua conta aqui.</span>
+            Não está cadastrado no MarcaNutri?
+            <span
+              className={`${Styles.color_green} font-bold`}
+            >
+              Crie sua conta aqui.
+            </span>
           </p>
         }
       </div>

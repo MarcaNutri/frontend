@@ -65,4 +65,27 @@
 
 .color_green {
   color: #289257;
+  margin-left: 5px;
 }
+
+@media (max-width: 506px) {
+  .color_green {
+    color: #289257;
+    margin-left: 0px;
+    text-align: center;
+    display: block;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .tab_active {
+    font-size: 18px;
+  }
+
+  .tab_disabled {
+    font-size: 18px;
+  }
+}
+

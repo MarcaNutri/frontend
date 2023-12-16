@@ -26,7 +26,7 @@ const Footer = () => {
   }, []) // O array vazio garante que o useEffect seja executado apenas uma vez, sem dependências
 
   return (
-    <div className={``}>
+    <div className={`relative bottom-0 w-full`}>
       <div className={`${styles.footer_border} mt-32 lg:mt-32`} />
       <div className={`${styles.footer_background} p-4`}>
         <div
