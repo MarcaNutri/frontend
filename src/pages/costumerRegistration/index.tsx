@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Style from './style.module.scss'
 import Footer from 'Components/ScreenComponentes/Footer'
 import NavBar from "Components/ScreenComponentes/NavBar";
-import InputElementWithInnerLabel from "Components/FormElements/InputWithInnerLabel";
+import InputElement from "Components/FormElements/Input";
 import ButtonElement from "Components/FormElements/Button";
 
 const CostumerRegistration = () => {
@@ -24,12 +24,12 @@ const CostumerRegistration = () => {
       <div className="max-w-[88rem] m-auto">
         <NavBar/>
         <div className="p-2 md:p-8">
-          <div className="lg:flex justify-between items-center mt-6 mb-6">
+          <div className="lg:flex justify-between items-center mt-6 mb-16">
             <h1 className={`${Style.title}`}>Faça seu cadastro</h1>
             <p className={`${Style.account} text-end lg:text-left`}>Já tem uma conta? <span className={`${Style.account_green}`}>Faça Login</span></p>
           </div>
           <div className="bg-white rounded p-4 grid">
-            <InputElementWithInnerLabel
+            <InputElement
               id="completedName"
               label="Nome completo"
               type="text"
@@ -37,10 +37,11 @@ const CostumerRegistration = () => {
               updateValue={setName}
               placeholder="Nome social ou de registro"
               classProp="mb-2"
+              inputStyle="inner"
             />
 
             <div className="lg:grid grid-cols-2 gap-2">
-              <InputElementWithInnerLabel
+              <InputElement
                 id="birthDate"
                 label="Data de nascimento"
                 type="text"
@@ -48,8 +49,9 @@ const CostumerRegistration = () => {
                 updateValue={setDate}
                 placeholder="DD/MM/AA"
                 classProp="mb-2"
+                inputStyle="inner"
               />
-              <InputElementWithInnerLabel
+              <InputElement
                 id="cpf"
                 label="Cpf"
                 type="text"
@@ -57,8 +59,9 @@ const CostumerRegistration = () => {
                 updateValue={setCpf}
                 placeholder="digite seu cpf"
                 classProp="mb-2"
+                inputStyle="inner"
               />
-              <InputElementWithInnerLabel
+              <InputElement
                 id="CellPhone"
                 label="Celular"
                 type="text"
@@ -66,24 +69,28 @@ const CostumerRegistration = () => {
                 updateValue={setCellPhone}
                 placeholder="(00) 00000-0000"
                 classProp="mb-2"
+                inputStyle="inner"
               />
-              <InputElementWithInnerLabel
+              <InputElement
                 id="Gender"
                 label="Gênero que você se identifica"
                 type="text"
                 value={gender}
                 updateValue={setGender}
                 classProp="mb-2"
+                inputStyle="inner"
               />
-              <InputElementWithInnerLabel
+              <InputElement
                 id="CEP"
                 label="CEP"
                 type="text"
                 value={cep}
                 updateValue={setCep}
                 classProp="mb-2"
+                inputStyle="inner"
               />
-              <InputElementWithInnerLabel
+
+             <InputElement
                 id="adress"
                 label="Endereço"
                 type="text"
@@ -91,10 +98,11 @@ const CostumerRegistration = () => {
                 placeholder="Digite seu endereço completo"
                 updateValue={setAddress}
                 classProp="mb-2"
+                inputStyle="inner"
               />
             </div>
 
-            <InputElementWithInnerLabel
+            <InputElement
               id="email"
               label="Email"
               type="email"
@@ -102,8 +110,9 @@ const CostumerRegistration = () => {
               updateValue={setEmail}
               placeholder="Digite seu email"
               classProp="mb-2"
+              inputStyle="inner"
             />
-            <InputElementWithInnerLabel
+            <InputElement
               id="emailConfirmation"
               label="Confirme seu email"
               type="email"
@@ -111,10 +120,11 @@ const CostumerRegistration = () => {
               updateValue={setEmailConfirmation}
               placeholder="Digite novamente seu email"
               classProp="mb-2"
+              inputStyle="inner"
             />
 
             <div className="lg:grid grid-cols-2 gap-2">
-              <InputElementWithInnerLabel
+              <InputElement
                 id="password"
                 label="Password"
                 type="email"
@@ -122,8 +132,9 @@ const CostumerRegistration = () => {
                 updateValue={setPassword}
                 placeholder="Digite uma senha"
                 classProp="mb-2"
+                inputStyle="inner"
               />
-              <InputElementWithInnerLabel
+              <InputElement
                 id="passwordConfirmation"
                 label="Confirme sua senha"
                 type="email"
@@ -131,9 +142,10 @@ const CostumerRegistration = () => {
                 updateValue={setPasswordConfirmation}
                 placeholder="Digite novamente sua senha"
                 classProp="mb-2"
+                inputStyle="inner"
               />
             </div>
-            <div className="lg:flex items-center justify-between items-center mt-6 mb-6">
+            <div className="lg:flex items-center justify-between items-center mb-6">
               <p className={`${Style.account} text-end lg:text-left mb-4`}>
                 <input
                   type="checkbox"

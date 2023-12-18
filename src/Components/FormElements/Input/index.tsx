@@ -1,6 +1,6 @@
 import React, {ChangeEvent} from "react";
-import main from '../main.module.scss';
-import style from './style.module.scss'
+import Main from '../main.module.scss';
+import Style from './style.module.scss'
 import Image from "next/image";
 import Error from "../../../../public/assets/Error.svg"
 import Info from "../../../../public/assets/info.svg"
@@ -16,6 +16,7 @@ interface InputElementProps {
   disabled?: boolean;
   infoText?: string;
   classProp?: string;
+  inputStyle?: string;
 }
 
 const InputElement: React.FC<InputElementProps> = ({
@@ -23,8 +24,9 @@ const InputElement: React.FC<InputElementProps> = ({
   label,
   type,
   value,
+  inputStyle = "standart",
   updateValue,
-  placeholder = "teste",
+  placeholder = "",
   error = "",
   disabled = false,
   infoText = "",
@@ -32,14 +34,19 @@ const InputElement: React.FC<InputElementProps> = ({
 }) => {
 
   return(
-    <div className="flex flex-col">
-      <label htmlFor={`input${id}`} className={`${main.input_label}`}>{label}</label>
+    <div className="flex flex-col relative">
+      <label
+        htmlFor={`input${id}`}
+        className={`${Main.input_label} ${inputStyle === "inner" && Style.label_inner}` }
+      >
+        {label}
+      </label>
       <input
         id={`input${id}`}
         type={type}
         value={value}
         onChange={(e: ChangeEvent<HTMLInputElement>) => { updateValue(e.target.value) }}
-        className={error ? `${main.input_element} ${main.input_element_error} ${classProp}` : `${main.input_element} ${classProp}`}
+        className={`${Main.input_element} ${ error && Main.input_element_error} ${classProp} ${ inputStyle === "inner" && Style.input_inner}`}
         placeholder={placeholder}
         disabled={disabled}
       />
@@ -50,9 +57,9 @@ const InputElement: React.FC<InputElementProps> = ({
             src={Info}
             width={16}
             alt="Icone de sucesso"
-            className={`mr-1 ${style.info_success}`}
+            className={`mr-1 ${Style.info_success}`}
           />
-          <p className={`${main.input_label} ${main.input_label_info}`}>{infoText}</p>
+          <p className={`${Main.input_label} ${Main.input_label_info}`}>{infoText}</p>
         </div>
       }
       {
@@ -64,7 +71,7 @@ const InputElement: React.FC<InputElementProps> = ({
             alt="Icone de erro"
             className="mr-1"
           />
-          <p className={`${main.input_label} ${main.input_label_info_error}`}>{error}</p>
+          <p className={`${Main.input_label} ${Main.input_label_info_error}`}>{error}</p>
         </div>
       }
     </div>
