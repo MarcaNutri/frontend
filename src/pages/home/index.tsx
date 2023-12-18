@@ -441,7 +441,7 @@ const CostumerRegistration = () => {
 
         <section
           className={`max-w-[88rem] flex gap-10 flex-wrap lg:flex-wrap lg:flex-nowrap items-center justify-center m-auto text-white p-2
-            md:p-6 lg:p-6 md:mt-40 lg:mt-40 lg:max-w-[112rem]`
+            md:p-6 lg:p-6 mt-20 md:mt-40 lg:mt-40 lg:max-w-[112rem]`
           }
         >
           <Image

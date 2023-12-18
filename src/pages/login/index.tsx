@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import react, {useState} from 'react'
+import axios from 'axios'
 
 //Assets
 import NutriImg from "../../../public/assets/Login/login-nutri.png"
@@ -24,6 +25,48 @@ const Login = () => {
   const [email, setEmail] = useState<string>("")
   const [credential, setCredential] = useState<string>("")
   const [password, setPassword] = useState<string>("")
+
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    axios
+      .post(
+        "http://localhost:3001/customer",
+        {
+          "typeUser": "CUSTOMER",
+          "name": "Guilherme Costa da Silva",
+          "birthday": "1999-10-11",
+          "phoneNumber": "53981081518",
+          "document": "49138046008",
+          "gender": "MASCULINO",
+          "cep": "89253515",
+          "address": "Rua Renato Pradi",
+          "state": "São Paulo",
+          "city": "São Paulo",
+          "neighborhood": "Praça da Sé",
+          "email": "guilherme_rgcosta@hotmail.com",
+          "password": "@Test01234"
+        },
+        {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+
+          },
+        }
+      )
+      .then(response => {
+        toast.success("Cadastrado com sucesso!")
+        alert("Cadastrado com sucesso!")
+        // const dataSearch = Object.assign({}, )
+        console.log(response,'resposta')
+      })
+      .catch(error => {
+        alert('Não foi possivel realizar o cadastro!')
+        toast.error("Não foi possivel realizar o cadastro")
+        console.log(error, 'errr')
+      })
+
+  }
 
   return (
     <div className="h-screen md:flex lg:flex w-full p-2 bg-white">
@@ -64,47 +107,51 @@ const Login = () => {
               /> Pacientes
             </div>
           </div>
-
-          {
-            isNutri ?
+          <form onSubmit={(e) => handleLogin(e)}>
+            {
+              isNutri ?
+                <InputElement
+                  id="Nutri"
+                  type="text"
+                  label="Cpf/Cnpj"
+                  placeholder="Digite seu cpf/cnpj"
+                  value={credential}
+                  updateValue={setCredential}
+                  required
+                  classProp="mb-6"
+                />
+              :
               <InputElement
-                id="Nutri"
-                type="text"
-                label="Cpf/Cnpj"
-                placeholder="Digite seu cpf/cnpj"
-                value={credential}
+                id="client"
+                type="email"
+                label="E-mail"
+                placeholder="Digite seu e-mail"
+                value={email}
                 updateValue={setCredential}
+                required
                 classProp="mb-6"
               />
-            :
-            <InputElement
-              id="client"
-              type="email"
-              label="E-mail"
-              placeholder="Digite seu e-mail"
-              value={email}
-              updateValue={setCredential}
-              classProp="mb-6"
-            />
-          }
+            }
 
-          <PasswordInput
-            id="password"
-            label="Senha"
-            placeholder="*********"
-            value={password}
-            updateValue={setPassword}
-            error=""
-          />
+              <PasswordInput
+                id="password"
+                label="Senha"
+                placeholder="*********"
+                value={password}
+                updateValue={setPassword}
+                required
+                error=""
+              />
 
-          <p className={`${Styles.forgot_password} text-end mt-3 mb-10`}>Esqueceu sua senha?</p>
+              <p className={`${Styles.forgot_password} text-end mt-3 mb-10`}>Esqueceu sua senha?</p>
 
-          <ButtonElement
-            text="Entrar"
-            size="large"
-            styleButton="round"
-            classProp=""
-          />
+              <ButtonElement
+                text="Entrar"
+                size="large"
+                styleButton="round"
+                classProp=""
+              />
+          </form>
         </div>
         {
           isNutri ?

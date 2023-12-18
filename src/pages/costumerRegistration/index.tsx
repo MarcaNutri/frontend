@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import Style from './style.module.scss'
+import axios from "axios";
+
+//Libraries
+import { toast } from 'react-toastify'
+
+//Components
 import Footer from 'Components/ScreenComponentes/Footer'
 import NavBar from "Components/ScreenComponentes/NavBar";
 import InputElement from "Components/FormElements/Input";
+import InputPassword from "Components/FormElements/InputPassword"
 import ButtonElement from "Components/FormElements/Button";
 
 const CostumerRegistration = () => {
@@ -19,6 +26,49 @@ const CostumerRegistration = () => {
   const [passwordConfirmation, setPasswordConfirmation] = useState<string>("")
   const [terms, setTerms] = useState<boolean>(false)
 
+  const handleSave = (e:any) => {
+    e.preventDefault();
+
+    axios
+      .post(
+        "http://localhost:3001/customer",
+        {
+          "typeUser": "CUSTOMER",
+          "name": "Guilherme Costa da Silva",
+          "birthday": "1999-10-11",
+          "phoneNumber": "53981081518",
+          "document": "49138046008",
+          "gender": "MASCULINO",
+          "cep": "89253515",
+          "address": "Rua Renato Pradi",
+          "state": "São Paulo",
+          "city": "São Paulo",
+          "neighborhood": "Praça da Sé",
+          "email": "guilherme_rgcosta@hotmail.com",
+          "password": "@Test01234"
+        },
+        {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+
+          },
+        }
+      )
+      .then(response => {
+        toast.success("Cadastrado com sucesso!")
+        alert("Cadastrado com sucesso!")
+        // const dataSearch = Object.assign({}, )
+        console.log(response,'resposta')
+      })
+      .catch(error => {
+        alert('Não foi possivel realizar o cadastro!')
+        toast.error("Não foi possivel realizar o cadastro")
+        console.log(error, 'errr')
+      })
+  }
+
+
+
   return (
     <>
       <div className="max-w-[88rem] m-auto">
@@ -28,7 +78,11 @@ const CostumerRegistration = () => {
             <h1 className={`${Style.title}`}>Faça seu cadastro</h1>
             <p className={`${Style.account} text-end lg:text-left`}>Já tem uma conta? <span className={`${Style.account_green}`}>Faça Login</span></p>
           </div>
-          <div className="bg-white rounded p-4 grid">
+
+          <form
+            onSubmit={(e) => handleSave(e)}
+            className="bg-white rounded p-4 grid"
+          >
             <InputElement
               id="completedName"
               label="Nome completo"
@@ -38,6 +92,7 @@ const CostumerRegistration = () => {
               placeholder="Nome social ou de registro"
               classProp="mb-2"
               inputStyle="inner"
+              required
             />
 
             <div className="lg:grid grid-cols-2 gap-2">
@@ -53,13 +108,14 @@ const CostumerRegistration = () => {
               />
               <InputElement
                 id="cpf"
-                label="Cpf"
+                label="CPF"
                 type="text"
                 value={cpf}
                 updateValue={setCpf}
                 placeholder="digite seu cpf"
                 classProp="mb-2"
                 inputStyle="inner"
+                required
               />
               <InputElement
                 id="CellPhone"
@@ -111,6 +167,7 @@ const CostumerRegistration = () => {
               placeholder="Digite seu email"
               classProp="mb-2"
               inputStyle="inner"
+              required
             />
             <InputElement
               id="emailConfirmation"
@@ -121,28 +178,29 @@ const CostumerRegistration = () => {
               placeholder="Digite novamente seu email"
               classProp="mb-2"
               inputStyle="inner"
+              required
             />
 
             <div className="lg:grid grid-cols-2 gap-2">
-              <InputElement
+              <InputPassword
                 id="password"
-                label="Password"
-                type="email"
+                label="Senha"
                 value={password}
                 updateValue={setPassword}
                 placeholder="Digite uma senha"
                 classProp="mb-2"
                 inputStyle="inner"
+                required
               />
-              <InputElement
+              <InputPassword
                 id="passwordConfirmation"
                 label="Confirme sua senha"
-                type="email"
                 value={passwordConfirmation}
                 updateValue={setPasswordConfirmation}
                 placeholder="Digite novamente sua senha"
                 classProp="mb-2"
                 inputStyle="inner"
+                required
               />
             </div>
             <div className="lg:flex items-center justify-between items-center mb-6">
@@ -162,10 +220,11 @@ const CostumerRegistration = () => {
               id="submit"
               size="large"
               text="Cadastrar"
+              type="submit"
               styleButton="rounded"
               classProp="w-full max-w-[32rem] m-auto mt-16 mb-16"
             />
-          </div>
+          </form>
         </div>
       </div>
       <Footer/>

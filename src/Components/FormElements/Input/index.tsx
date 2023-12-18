@@ -14,6 +14,7 @@ interface InputElementProps {
   placeholder?: string;
   error?: string;
   disabled?: boolean;
+  required?: boolean;
   infoText?: string;
   classProp?: string;
   inputStyle?: string;
@@ -30,7 +31,8 @@ const InputElement: React.FC<InputElementProps> = ({
   error = "",
   disabled = false,
   infoText = "",
-  classProp=""
+  classProp="",
+  required = false
 }) => {
 
   return(
@@ -39,7 +41,7 @@ const InputElement: React.FC<InputElementProps> = ({
         htmlFor={`input${id}`}
         className={`${Main.input_label} ${inputStyle === "inner" && Style.label_inner}` }
       >
-        {label}
+        {`${label} ${required ? "*" : ""}`}
       </label>
       <input
         id={`input${id}`}
@@ -49,6 +51,7 @@ const InputElement: React.FC<InputElementProps> = ({
         className={`${Main.input_element} ${ error && Main.input_element_error} ${classProp} ${ inputStyle === "inner" && Style.input_inner}`}
         placeholder={placeholder}
         disabled={disabled}
+        required={required}
       />
       {
        !error && infoText &&

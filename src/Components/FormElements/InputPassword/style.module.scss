@@ -1,3 +1,5 @@
+@import '../../../styles/variables.module.scss';
+
 .hidden_img {
   position: absolute;
   right: 25px;
@@ -12,8 +14,80 @@
   cursor: pointer;
 }
 
+.hidden_img_inner {
+  position: absolute;
+  width: 32px;
+  right: 25px;
+  bottom: 30px;
+  cursor: pointer;
+}
+
+.show_img_inner {
+  position: absolute;
+  width: 32px;
+  right: 25px;
+  bottom: 31px;
+  cursor: pointer;
+}
+
 .input_container {
   width: 100%;
   min-width:  200px;
   max-width:  100%;
+}
+
+//Inner Label Type
+
+.input_inner {
+  padding: 24px 11.7px 7.28px 11.7px;
+  font-size: $text-input-size-big;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(238, 238, 238, 0.60);
+  border: none;
+  &::placeholder {
+    font-size: $text-input-size-big;
+  }
+}
+
+.label_inner {
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  color: $success !important;
+}
+
+
+@media ( max-width: 500px) {
+
+.input_inner {
+
+  font-size:$text-input-size;
+  border: none;
+  &::placeholder {
+    font-size: $text-input-size;
+  }
+}
+
+.hidden_img_inner {
+  position: absolute;
+  width: 20px;
+  right: 18px;
+  bottom: 24px;
+  cursor: pointer;
+}
+
+.show_img_inner {
+  position: absolute;
+  width: 20px;
+  right: 18px;
+  bottom: 24px;
+  cursor: pointer;
+}
+
+.label_inner {
+  font-size: 14px;
+}
+
+
 }
