@@ -29,6 +29,23 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault()
+
+    console.log({
+      "typeUser": "CUSTOMER",
+      "name": "Guilherme Costa da Silva",
+      "birthday": "1999-10-11",
+      "phoneNumber": "53981081518",
+      "document": "49138046008",
+      "gender": "MASCULINO",
+      "cep": "89253515",
+      "address": "Rua Renato Pradi",
+      "state": "São Paulo",
+      "city": "São Paulo",
+      "neighborhood": "Praça da Sé",
+      "email": "guilherme_rgcosta@hotmail.com",
+      "password": "@Test01234"
+    },'body')
+
     axios
       .post(
         "http://localhost:3001/customer",
@@ -50,7 +67,6 @@ const Login = () => {
         {
           headers: {
             'Access-Control-Allow-Origin': '*',
-
           },
         }
       )
