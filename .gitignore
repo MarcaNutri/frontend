@@ -4,7 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-./package-lock.json
+.yarn/install-state.gz
+
 # testing
 /coverage
 
@@ -13,24 +14,16 @@
 /out/
 
 # production
-/dist
 /build
 
 # misc
 .DS_Store
 *.pem
 
-# jetBrains and vscode
-.idea/
-
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# storybook
-/storybook-static
-/src/stories
 
 # local env files
 .env*.local

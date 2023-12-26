@@ -1,43 +1,42 @@
+"use client"
+
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Style from './style.module.scss'
 
 //Components
-import Footer from 'Components/ScreenComponentes/Footer'
-import NavBar from "Components/ScreenComponentes/NavBar";
-import ButtonElement from "Components/FormElements/Button";
+import ButtonElement from "@/components/formElements/button";
 
 //IMAGES
 
 //Header
-import NutriHeader from '../../../public/assets/Home/NutriHeader.png'
-import Clock from '../../../public/assets/Home/clock.svg'
-import stethoscope from '../../../public/assets/Home/stethoscope.svg'
-import Search from '../../../public/assets/search.svg'
+import NutriHeader from '@public/assets/Home/NutriHeader.png'
+import Clock from '@public/assets/Home/clock.svg'
+import stethoscope from '@public/assets/Home/stethoscope.svg'
+import Search from '@public/assets/search.svg'
 
 //Partiner
-import Nutricionista1 from '../../../public/assets/Home/rafaela.png'
-import Nutricionista2 from '../../../public/assets/Home/natalia.png'
-import Check from '../../../public/assets/Home/CheckWhite.svg'
-import CheckGreen from '../../../public/assets/Home/checkgreen.svg'
-import logoWhite from '../../../public/assets/marcaNutriWhite.svg'
+import Nutricionista1 from '@public/assets/Home/rafaela.png'
+import Nutricionista2 from '@public/assets/Home/natalia.png'
+import Check from '@public/assets/Home/CheckWhite.svg'
+import CheckGreen from '@public/assets/Home/checkgreen.svg'
+import logoWhite from '@public/assets/marcaNutriWhite.svg'
 
 //Find Nutri
-import FindImage from '../../../public/assets/Home/findImageSection.png'
-import FindImageMobile from '../../../public/assets/Home/findImageSectionMobile.png'
+import FindImage from '@public/assets/Home/findImageSection.png'
+import FindImageMobile from '@public/assets/Home/findImageSectionMobile.png'
 
 //Inform
-import InformImg from '../../../public/assets/Home/informImg.png'
+import InformImg from '@public/assets/Home/informImg.png'
 //General
-import LogoRounded from '../../../public/assets/Home/logoRounded.svg'
-import LogoRoundedGreen from '../../../public/assets/Home/logoRoundedGreen.svg'
-import Location from '../../../public/assets/location.svg'
-import LocationWhite from '../../../public/assets/locationWhite.svg'
-import RoundedImage from '../../../public/assets/Home/roundedImages.png'
+import LogoRounded from '@public/assets/Home/logoRounded.svg'
+import LogoRoundedGreen from '@public/assets/Home/logoRoundedGreen.svg'
+import Location from '@public/assets/location.svg'
+import LocationWhite from '@public/assets/locationWhite.svg'
+import RoundedImage from '@public/assets/Home/roundedImages.png'
 
 
-const CostumerRegistration = () => {
-  const [showMenu, setShowMenu] = useState<boolean>(false)
+const Home = () => {
   const [screenSize, setScreenSize] = useState<any>()
 
   const updateScreenSize = () => {
@@ -61,9 +60,8 @@ const CostumerRegistration = () => {
       <div>
 
         {/* Header */}
-        <header className={`${showMenu ? Style.container_header_menu : Style.container_header}`}>
+        <header className={`${Style.container_header}`}>
           <div className="max-w-[88rem] lg:max-w-[120rem] m-auto">
-            <NavBar ActiveFlg={setShowMenu}/>
             <div className="px-2 md:p-8 lg:p-12">
               <h1 className={`${Style.title} ${Style.primary_color} text-3xl md:text-6xl lg:text-8xl`}>
               O bom da vida é estar bem!
@@ -441,7 +439,7 @@ const CostumerRegistration = () => {
 
         <section
           className={`max-w-[88rem] flex gap-10 flex-wrap lg:flex-wrap lg:flex-nowrap items-center justify-center m-auto text-white p-2
-            md:p-6 lg:p-6 md:mt-40 lg:mt-40 lg:max-w-[112rem]`
+            md:p-6 lg:p-6 mt-20 md:mt-40 lg:mt-40 lg:max-w-[112rem]`
           }
         >
           <Image
@@ -459,9 +457,8 @@ const CostumerRegistration = () => {
         </section>
 
       </div>
-      <Footer/>
     </>
   )
 }
 
-export default CostumerRegistration
+export default Home

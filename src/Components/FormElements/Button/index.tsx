@@ -8,7 +8,7 @@ interface ButtonElementProps {
   disabled?:boolean
   styleButton?:string
   classProp?:string
-  type?:string
+  type?:any
 }
 
 
@@ -16,6 +16,7 @@ const ButtonElement : React.FC<ButtonElementProps> = ({
   id,
   size,
   text,
+  type = "button",
   disabled,
   styleButton = "primary",
   classProp = ""
@@ -48,6 +49,7 @@ const ButtonElement : React.FC<ButtonElementProps> = ({
     <button
       id={id}
       className={`${handleSizeButton()} ${classProp}`}
+      type={type}
       disabled={disabled}
     >
       {text}

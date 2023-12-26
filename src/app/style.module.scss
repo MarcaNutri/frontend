@@ -1,4 +1,4 @@
-@import '../../styles/variables.module.scss';
+@import '@/styles/variables.module.scss';
 
 //Header
 
@@ -170,7 +170,7 @@
 // PARTINER SECTION
 
 .container_partiner {
-  background-image: url("../../../public/assets/Home/fundo.png");
+  background-image: url("../../public/assets/Home/fundo.png");
   background-repeat: no-repeat;
   background-size: cover;
   max-height: 807px;
@@ -184,7 +184,7 @@
 // FIND NUTRI SECTION
 
 .container_find_nutri {
-  background-image: url("../../../public/assets/Home/fundo.png");
+  background-image: url("../../public/assets/Home/fundo.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 0px 0px 0px 25%;
