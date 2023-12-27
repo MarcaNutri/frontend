@@ -7,18 +7,15 @@ import Image from "next/image";
 import Logo from '../../../../public/assets/logo-vazado.svg'
 import LogoButton from '../../../../public/assets/logo-without-label.svg'
 import Menu from '../../../../public/assets/menu.svg'
+import Link from "next/link";
 
 interface NavProps {
   ActiveFlg?: (value: boolean) => void
 }
 
-const NavBar: React.FC<NavProps> = ({ActiveFlg}) => {
+const NavBar: React.FC<NavProps> = () => {
 
   const [showMenu, setShowMenu] = useState<boolean>(false)
-
-  useEffect(() => {
-    if(ActiveFlg) ActiveFlg(showMenu)
-  },[showMenu])
 
   return(
     <>
@@ -28,7 +25,9 @@ const NavBar: React.FC<NavProps> = ({ActiveFlg}) => {
           <p
             className={`${Style.navbar_item} ${Style.navbar_item_active} mr-4 hover:brightness-75 ease-in-out duration-200`}
           >
+            <Link href="/">
             Home
+            </Link>
           </p>
           <p
             className={`${Style.navbar_item} mr-4 hover:brightness-75 ease-in-out duration-200`}
@@ -51,10 +50,12 @@ const NavBar: React.FC<NavProps> = ({ActiveFlg}) => {
             Como funciona
             </p>
         </div>
-        <button className={`${Style.login_button} hidden px-8 items-center lg:flex`}>
-          <Image src={LogoButton} width={32} alt="Logo" className={`mr-5`}/>
-          <span className={`${Style.login_button_text}`}>Login</span>
-        </button>
+        <Link href="/login">
+          <button className={`${Style.login_button} hidden px-8 items-center lg:flex`}>
+            <Image src={LogoButton} width={32} alt="Logo" className={`mr-5`}/>
+            <span className={`${Style.login_button_text}`}>Login</span>
+          </button>
+        </Link>
         <Image
           src={Menu}
           width={24}

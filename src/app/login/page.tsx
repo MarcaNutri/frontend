@@ -3,6 +3,8 @@ import Image from 'next/image'
 import react, {useState} from 'react'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
+import Footer from '@/components/layoutComponents/footer'
+import NavBar from "@/components/layoutComponents/navBar"
 
 //Assets
 import NutriImg from "../../../public/assets/Login/login-nutri.png"
@@ -20,6 +22,7 @@ import ButtonElement from '@/components/formElements/button'
 
 //Styles
 import Styles from './style.module.scss'
+import Link from 'next/link';
 
 const Login = () => {
 
@@ -187,7 +190,9 @@ const Login = () => {
             <span
               className={`${Styles.color_green} font-bold`}
             >
-              Crie sua conta aqui.
+              <Link href={"/customer/register"}>
+                Crie sua conta aqui.
+              </Link>
             </span>
           </p>
         }

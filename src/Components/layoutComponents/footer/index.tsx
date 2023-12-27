@@ -1,5 +1,4 @@
 'use client'
-import react, { useState, useEffect } from 'react'
 import styles from './style.module.scss'
 import Image from 'next/image'
 import LogoBranco from '../../../../public/assets/Footer/MarcaNutri-branco.svg'
@@ -9,22 +8,6 @@ import Facebook from '../../../../public/assets/Footer/facebook.svg'
 import Instagram from '../../../../public/assets/Footer/instagram.svg'
 
 const Footer = () => {
-  const [screenSize, setScreenSize] = useState<any>()
-
-  const updateScreenSize = () => {
-    setScreenSize(window.innerWidth)
-  }
-
-  useEffect(() => {
-    setScreenSize(window?.innerWidth)
-    // Adicionar um ouvinte de redimensionamento
-    window.addEventListener('resize', updateScreenSize)
-
-    // Remover o ouvinte de redimensionamento quando o componente é desmontado
-    return () => {
-      window.removeEventListener('resize', updateScreenSize)
-    }
-  }, []) // O array vazio garante que o useEffect seja executado apenas uma vez, sem dependências
 
   return (
     <div className={`relative bottom-0 w-full`}>

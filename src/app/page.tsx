@@ -6,6 +6,8 @@ import Style from './style.module.scss'
 
 //Components
 import ButtonElement from "@/components/formElements/button";
+import Footer from '@/components/layoutComponents/footer'
+import NavBar from "@/components/layoutComponents/navBar"
 
 //IMAGES
 
@@ -61,6 +63,7 @@ const Home = () => {
 
         {/* Header */}
         <header className={`${Style.container_header}`}>
+          <NavBar/>
           <div className="max-w-[88rem] lg:max-w-[120rem] m-auto">
             <div className="px-2 md:p-8 lg:p-12">
               <h1 className={`${Style.title} ${Style.primary_color} text-3xl md:text-6xl lg:text-8xl`}>
@@ -455,7 +458,7 @@ const Home = () => {
               </p>
           </div>
         </section>
-
+          <Footer/>
       </div>
     </>
   )

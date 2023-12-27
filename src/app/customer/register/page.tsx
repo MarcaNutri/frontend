@@ -4,12 +4,14 @@ import Style from './style.module.scss'
 import axios from "axios";
 
 //Libraries
-import { toast } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //Components
 import InputElement from "@/components/formElements/input";
 import InputPassword from "@/components/formElements/inputPassword"
 import ButtonElement from "@/components/formElements/button";
+import Link from "next/link";
 
 const CostumerRegistration = () => {
   const [name, setName] = useState<string>("")
@@ -28,43 +30,30 @@ const CostumerRegistration = () => {
   const handleSave = (e:any) => {
     e.preventDefault();
 
-    // axios
-    //   .post(
-    //     "/customer",
-    //     {
-    //       "typeUser": "CUSTOMER",
-    //       "name": "Guilherme Costa da Silva",
-    //       "birthday": "1999-10-11",
-    //       "phoneNumber": "53981081518",
-    //       "document": "49138046008",
-    //       "gender": "MASCULINO",
-    //       "cep": "89253515",
-    //       "address": "Rua Renato Pradi",
-    //       "state": "São Paulo",
-    //       "city": "São Paulo",
-    //       "neighborhood": "Praça da Sé",
-    //       "email": "guilherme_rgcosta@hotmail.com",
-    //       "password": "@Test01234"
-    //     },
-    //     {
-    //       headers: {
-    //         'Access-Control-Allow-Origin': '*',
-    //       },
-    //     }
-    //   )
-    //   .then(response => {
-    //     toast.success("Cadastrado com sucesso!")
-    //     alert("Cadastrado com sucesso!")
-    //     // const dataSearch = Object.assign({}, )
-    //     console.log(response,'resposta')
-    //   })
-    //   .catch(error => {
-    //     alert('Não foi possivel realizar o cadastro!')
-    //     toast.error("Não foi possivel realizar o cadastro")
-    //     console.log(error, 'errr')
-    //   })
-
-    axios.get("http://localhost:3001/customer",{},)
+    axios
+      .post(
+        "/customer",
+        {
+          "typeUser": "CUSTOMER",
+          "name": "Guilherme Costa da Silva",
+          "birthday": "1999-10-11",
+          "phoneNumber": "53981081518",
+          "document": "49138046008",
+          "gender": "MASCULINO",
+          "cep": "89253515",
+          "address": "Rua Renato Pradi",
+          "state": "São Paulo",
+          "city": "São Paulo",
+          "neighborhood": "Praça da Sé",
+          "email": "guilherme_rgcosta@hotmail.com",
+          "password": "@Test01234"
+        },
+        {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+          },
+        }
+      )
       .then(response => {
         toast.success("Cadastrado com sucesso!")
         alert("Cadastrado com sucesso!")
@@ -76,17 +65,21 @@ const CostumerRegistration = () => {
         toast.error("Não foi possivel realizar o cadastro")
         console.log(error, 'errr')
       })
+
   }
-
-
 
   return (
     <>
       <div className="max-w-[88rem] m-auto">
+        <ToastContainer
+          theme="colored"
+        />
         <div className="p-2 md:p-8">
           <div className="lg:flex justify-between items-center mt-6 mb-16">
             <h1 className={`${Style.title}`}>Faça seu cadastro</h1>
-            <p className={`${Style.account} text-end lg:text-left`}>Já tem uma conta? <span className={`${Style.account_green}`}>Faça Login</span></p>
+            <p className={`${Style.account} text-end lg:text-left`}>Já tem uma conta?
+            <span className={`${Style.account_green}`}><Link href="/login" prefetch={false}>Faça Login</Link></span>
+            </p>
           </div>
 
           <form
@@ -224,7 +217,9 @@ const CostumerRegistration = () => {
                 />
                 Li e estou de acordo com os <span className={`${Style.account_green}`}> termos de uso</span>.
               </p>
-              <p className={`${Style.account} text-end lg:text-left`}>Já tem uma conta? <span className={`${Style.account_green}`}>Faça Login</span></p>
+              <p className={`${Style.account} text-end lg:text-left`}>Já tem uma conta?
+              <span className={`${Style.account_green}`}><Link href="/login" prefetch={false}>Faça Login</Link></span>
+              </p>
             </div>
             <ButtonElement
               id="submit"
