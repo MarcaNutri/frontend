@@ -1,0 +1,50 @@
+@import '../../../styles/variables.module.scss';
+
+.info_success {
+  fill: $success !important;
+  stroke: $success;
+}
+
+//Inner Label Type
+
+.input_inner {
+  padding: 26px 11.7px 6.28px 11.7px;
+  font-size: $text-input-size-medium;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(238, 238, 238, 0.60);
+  border: none;
+  &::placeholder {
+    font-size: $text-input-size-medium;
+    color: rgba(189, 189, 189, 0.68);
+  }
+}
+
+.label_inner {
+  color: rgba(40, 146, 87, 0.76);
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: absolute;
+  top: 3px;
+  left: 10px;
+}
+
+
+@media ( max-width: 500px) {
+
+.input_inner {
+
+  font-size:$text-input-size;
+  border: none;
+  &::placeholder {
+    font-size: $text-input-size;
+  }
+}
+
+.label_inner {
+  font-size: 14px;
+}
+
+}

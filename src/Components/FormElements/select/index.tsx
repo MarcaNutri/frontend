@@ -5,42 +5,39 @@ import Image from "next/image";
 import Error from "../../../../public/assets/Error.svg"
 import Info from "../../../../public/assets/info.svg"
 
-interface InputElementProps {
+interface Option {
+  value: string;
+  label: string;
+}
+
+interface SelectElementProps {
   id: string;
   label: string;
-  type: string;
   value: string | undefined;
   updateValue: (value: string) => void;
-  onBlur?: (value: string) => void | undefined;
-  placeholder?: string;
+  firstOption?: string;
   error?: string;
-  resetError?: (value: string) => void;
   disabled?: boolean;
   required?: boolean;
   infoText?: string;
   classProp?: string;
   inputStyle?: string;
-  min?:number;
-  max?:number;
+  options: Option[]
 }
 
-const InputElement: React.FC<InputElementProps> = ({
+const SelectElement: React.FC<SelectElementProps> = ({
   id,
   label,
-  type,
-  inputStyle = "standart",
   value,
+  inputStyle = "standart",
   updateValue,
-  resetError,
-  onBlur,
-  placeholder = "",
+  firstOption = "Escolha uma opção",
   error = "",
   disabled = false,
   infoText = "",
   classProp="",
   required = false,
-  min,
-  max
+  options = []
 }) => {
 
   return(
@@ -51,19 +48,23 @@ const InputElement: React.FC<InputElementProps> = ({
       >
         {`${label} ${required ? "*" : ""}`}
       </label>
-      <input
+      <select
         id={`input${id}`}
-        type={type}
         value={value}
-        onChange={(e: ChangeEvent<HTMLInputElement>) => { updateValue(e.target.value), resetError?.("") }}
-        onBlur={(e) => onBlur?.(e.target.value)}
-        className={`${Main.input_element} ${ error && Main.input_element_error} ${classProp} ${ inputStyle === "inner" && Style.input_inner}`}
-        placeholder={placeholder}
+        onChange={(e: ChangeEvent<HTMLSelectElement>) => { updateValue(e.target.value) }}
+        className={`${Main.input_element} ${error && Main.input_element_error} ${classProp} ${inputStyle === "inner" && Style.input_inner}`}
         disabled={disabled}
         required={required}
-        minLength={min}
-        maxLength={max}
-      />
+      >
+       <option value="">
+        {firstOption}
+       </option>
+       {options?.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
       {
        !error && infoText &&
         <div className="flex items-center">
@@ -92,4 +93,4 @@ const InputElement: React.FC<InputElementProps> = ({
   )
 }
 
-export default InputElement;
+export default SelectElement;
