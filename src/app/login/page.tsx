@@ -164,7 +164,8 @@ const Login = () => {
                 error=""
               />
 
-              <p className={`${Styles.forgot_password} text-end mt-3 mb-10`}>Esqueceu sua senha?</p>
+              <p className={`${Styles.forgot_password} text-end mt-3 mb-10`}>
+                <Link href={"/login/forgotPassword"}>Esqueceu sua senha?</Link></p>
 
               <ButtonElement
                 text="Entrar"

@@ -1,0 +1,46 @@
+@import '../../../styles/variables.module.scss';
+
+.container {
+  background-image: url("../../../../public/assets/Login/forgotPassword.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.title {
+  font-family: $title-text-color;
+  font-size: $title-text-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.paragraph {
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+// @media (max-width: 506px) {
+//   .color_green {
+//     color: #289257;
+//     margin-left: 0px;
+//     text-align: center;
+//     display: block;
+//   }
+
+//   .title {
+//     font-size: 24px;
+//   }
+
+//   .tab_active {
+//     font-size: 18px;
+//   }
+
+//   .tab_disabled {
+//     font-size: 18px;
+//   }
+// }
+

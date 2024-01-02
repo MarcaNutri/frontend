@@ -21,7 +21,7 @@ export const handleRegisterCustomer = async (
 ): Promise<AxiosResponse<any>> => {
   try {
     const response = await axios.post(
-      "/customer",
+      "http://localhost:3001/customer",
       {
         ...customer,
         typeUser: "CUSTOMER",

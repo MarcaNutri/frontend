@@ -161,14 +161,18 @@ const CostumerRegistration = () => {
                 classProp="mb-2"
                 inputStyle="inner"
               />
-              <InputElement
+              <SelectElement
                 id="Gender"
                 label="Gênero que você se identifica"
-                type="text"
                 value={gender}
                 updateValue={setGender}
                 classProp="mb-2"
                 inputStyle="inner"
+                options={[
+                  { value: 'homem', label: 'Homem'},
+                  { value: 'mulher', label: 'Mulher'},
+                  { value: 'não informado', label: 'Prefiro não informar'},
+                ]}
               />
               <InputElement
                 id="CEP"
