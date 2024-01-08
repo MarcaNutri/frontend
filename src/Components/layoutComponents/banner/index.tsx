@@ -1,15 +1,11 @@
-'use client'
 import React, { useEffect, useState } from "react";
 import Style from './style.module.scss'
-import Image from "next/image";
 
 interface NavProps {
   text?: string;
 }
 
 const Banner: React.FC<NavProps> = ({text}) => {
-
-  const [showMenu, setShowMenu] = useState<boolean>(false)
 
   return(
     <>
