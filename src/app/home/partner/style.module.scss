@@ -1,0 +1,213 @@
+@import '@/styles/variables.module.scss';
+
+//Header
+
+.container_header {
+  min-height:  740px;
+  position: relative;
+}
+
+.container_header_menu {
+  min-height:  740px;
+  position: relative;
+}
+
+.title {
+  font-family: 'Jomhuria';
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal
+}
+
+.paragraph {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.header_line {
+  background: #289257;
+  height: 134px;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.nutri_image {
+  position: absolute !important;
+  top: -486px;
+  right: 0;
+}
+
+.tips_container {
+  display: flex;
+  position: absolute;
+  top:-45px;
+}
+
+.tips_header {
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 13px 19px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  width: 100%;
+  max-width: 328px;
+  max-height: 290px;
+  padding: 35px 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  flex-shrink: 0;
+  color: #737373;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.2px;
+
+  .tips_icon {
+    display: flex;
+    width: 72px;
+    height: 72px;
+    padding: 13px 14px 13px 12px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 200px;
+    background: #289257;
+  }
+
+  .tips_title {
+    color: #252B42;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.1px;
+  }
+
+  .tips_line {
+    width: 24.831px;
+    height: 1.121px;
+    flex-shrink: 0;
+    background: #289257;
+  }
+
+}
+
+// SPECIALTY SECTION
+
+.container_specialty {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  border-radius: 20px;
+  border: 1px solid $primary;
+  width: 285px;
+  height: 285px;
+  gap:4px;
+  color: #5C5C5C;
+}
+
+.container_specialty_green {
+  background-color: $primary;
+  color: white;
+}
+
+
+// PARTINER SECTION
+
+.container_partiner {
+  background-image: url("../../../../public/assets/Home/fundo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-height: 807px;
+}
+
+.text_container {
+  min-width: 160px;
+  max-width: 280px;
+}
+
+// FIND NUTRI SECTION
+
+.container_find_nutri {
+  background-image: url("../../../../public/assets/Home/fundo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0px 0px 0px 25%;
+}
+
+
+@media (max-width:1450px ) {
+
+  //Header
+  .nutri_image {
+    position: absolute !important;
+    top: -330px;
+    right: 0;
+    width: 600px;
+  }
+
+  .tips_container {
+    display: flex;
+    position: absolute;
+    top:-45px;
+  }
+
+  .tips_header {
+    width: 100%;
+    max-width: 141px;
+    max-height: 215px;
+    padding: 9px;
+    gap: 2px;
+    font-size: 10px;
+
+    .tips_icon {
+      width: 44px;
+      height: 44px;
+    }
+
+    .tips_title {
+      font-size: 13px;
+    }
+
+    .tips_line {
+      width: 24.831px;
+      height: 1.121px;
+      flex-shrink: 0;
+      background: #289257;
+    }
+
+  }
+}
+
+@media (max-width: 768px) {
+  .container_header {
+    min-height:  500px;
+  }
+
+  .container_header_menu {
+    min-height:  740px;
+  }
+
+  // SPECIALTY SECTION
+
+  .container_specialty {
+    width: 180px;
+    height: 176px;
+    gap:4px;
+    padding: 10px 10px;
+  }
+
+  .container_specialty_logo {
+    width: 36px;
+    height: 36px;
+  }
+
+}

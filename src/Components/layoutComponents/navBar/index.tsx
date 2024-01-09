@@ -79,12 +79,12 @@ const NavBar: React.FC<NavProps> = () => {
             className={`${Style.navbar_item} mr-4 hover:brightness-75 ease-in-out duration-200`}
           >
             Parceiros
-            </p>
+          </p>
           <p
             className={`${Style.navbar_item} mr-4 hover:brightness-75 ease-in-out duration-200`}
           >
-            Para Nutris
-            </p>
+            <Link href={"home/partner"}>Para Nutris</Link>
+          </p>
           <p
             className={`${Style.navbar_item} hover:brightness-75 ease-in-out duration-200`}
           >
