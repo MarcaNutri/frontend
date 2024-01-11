@@ -1,0 +1,75 @@
+@import '@/styles/variables.module.scss';
+
+
+.title {
+  font-family: 'Jomhuria';
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal
+}
+
+.paragraph {
+  font-family: 'Roboto';
+  font-style: normal;
+  line-height: normal;
+}
+
+.header_line {
+  background: #289257;
+  height: 134px;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.nutri_image {
+  position: absolute !important;
+  top: -486px;
+  right: 0;
+}
+
+// SPECIALTY SECTION
+
+.container_specialty {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  border-radius: 20px;
+  border: 1px solid $primary;
+  width: 285px;
+  height: 285px;
+  gap:4px;
+  color: #5C5C5C;
+}
+
+.container_specialty_green {
+  background-color: $primary;
+  color: white;
+}
+
+// PARTINER SECTION
+
+.container_partiner {
+  background-color: $primary;
+}
+
+.text_container {
+  min-width: 160px;
+  max-width: 280px;
+}
+
+
+@media (max-width:1450px ) {
+
+  //Header
+  .nutri_image {
+    position: absolute !important;
+    top: -330px;
+    right: 0;
+    width: 600px;
+  }
+
+
+}

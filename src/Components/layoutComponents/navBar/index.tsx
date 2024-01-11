@@ -37,18 +37,13 @@ const NavBar: React.FC<NavProps> = () => {
           <p
             className={`${Style.navbar_item} mr-4 hover:brightness-75 ease-in-out duration-200`}
           >
-            Parceiros
-            </p>
-          <p
-            className={`${Style.navbar_item} mr-4 hover:brightness-75 ease-in-out duration-200`}
-          >
-            Para Nutris
-            </p>
+            <Link href={"/home/partner"}>Para Nutris</Link>
+          </p>
           <p
             className={`${Style.navbar_item} hover:brightness-75 ease-in-out duration-200`}
           >
-            Como funciona
-            </p>
+            <Link href={"/home/howItWorks"}>Como funciona</Link>
+          </p>
         </div>
         <Link href="/login">
           <button className={`${Style.login_button} hidden px-8 items-center lg:flex`}>
@@ -78,17 +73,12 @@ const NavBar: React.FC<NavProps> = () => {
           <p
             className={`${Style.navbar_item} mr-4 hover:brightness-75 ease-in-out duration-200`}
           >
-            Parceiros
-          </p>
-          <p
-            className={`${Style.navbar_item} mr-4 hover:brightness-75 ease-in-out duration-200`}
-          >
             <Link href={"home/partner"}>Para Nutris</Link>
           </p>
           <p
             className={`${Style.navbar_item} hover:brightness-75 ease-in-out duration-200`}
           >
-            Como funciona
+           <Link href={"/home/howItWorks"}>Como funciona</Link>
           </p>
       </div>
     </>

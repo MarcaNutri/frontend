@@ -30,6 +30,7 @@ import FindImageMobile from '@public/assets/Home/perfilIconsMobile.png'
 //Inform
 import InformImg from '@public/assets/Home/informImg.png'
 import RoundedImage from '@public/assets/Home/roundedImages.png'
+import Accordion from "@/components/accordion";
 
 
 const Partner = () => {
@@ -277,7 +278,7 @@ const Partner = () => {
 
         {/* PAYMENT */}
         <section className={`${Style.container_partiner} text-white flex items-center flex-wrap justify-center
-          m-auto mt-20 flex-col-reverse lg:flex-row gap-6
+          m-auto mt-20 flex-col lg:flex-row gap-6
           md:mt-20 lg:mt-20 p-2 md:p-6 lg:p-8`}
         >
           <Image
@@ -335,8 +336,8 @@ const Partner = () => {
           </div>
         </section>
 
-         {/* infos section */}
-         <section
+        {/* infos section */}
+        <section
           className="max-w-[88rem] flex items-center flex-wrap justify-center
           m-auto mt-20 flex-col-reverse lg:flex-row gap-6
           md:mt-20 lg:mt-20 p-2 md:p-6 lg:p-6 lg:max-w-[100rem]"
@@ -354,6 +355,31 @@ const Partner = () => {
           />
         </section>
 
+        <Accordion
+          title="Nutricionistas"
+          contents={[
+            {
+              title:'A plataforma é segura?',
+              content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            },
+            {
+              title:'Recebo lembretes das consultas agendadas?',
+              content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            },
+            {
+              title:'Serei avaliado por meus pacientes?',
+              content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            },
+            {
+              title:'O que são as taxas sobre agendamento?',
+              content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            },
+            {
+              title:'Como eu recebo o valor da consulta?',
+              content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            }
+          ]}
+        />
       </div>
     </>
   )
